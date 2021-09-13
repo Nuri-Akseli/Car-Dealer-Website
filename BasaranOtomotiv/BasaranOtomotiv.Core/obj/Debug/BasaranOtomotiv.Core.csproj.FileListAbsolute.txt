@@ -1,0 +1,14 @@
+C:\Users\Nuri\source\repos\BasaranOtomotiv\BasaranOtomotiv.Core\bin\Debug\BasaranOtomotiv.Core.dll.config
+C:\Users\Nuri\source\repos\BasaranOtomotiv\BasaranOtomotiv.Core\bin\Debug\BasaranOtomotiv.Core.dll
+C:\Users\Nuri\source\repos\BasaranOtomotiv\BasaranOtomotiv.Core\bin\Debug\BasaranOtomotiv.Core.pdb
+C:\Users\Nuri\source\repos\BasaranOtomotiv\BasaranOtomotiv.Core\bin\Debug\EntityFramework.dll
+C:\Users\Nuri\source\repos\BasaranOtomotiv\BasaranOtomotiv.Core\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Nuri\source\repos\BasaranOtomotiv\BasaranOtomotiv.Core\bin\Debug\EntityFramework.xml
+C:\Users\Nuri\source\repos\BasaranOtomotiv\BasaranOtomotiv.Core\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Nuri\source\repos\BasaranOtomotiv\BasaranOtomotiv.Core\obj\Debug\BasaranOtomotiv.Core.csproj.AssemblyReference.cache
+C:\Users\Nuri\source\repos\BasaranOtomotiv\BasaranOtomotiv.Core\obj\Debug\BasaranOtomotiv.Core.csproj.CoreCompileInputs.cache
+C:\Users\Nuri\source\repos\BasaranOtomotiv\BasaranOtomotiv.Core\obj\Debug\BasaranOtomotiv.Core.csproj.CopyComplete
+C:\Users\Nuri\source\repos\BasaranOtomotiv\BasaranOtomotiv.Core\obj\Debug\BasaranOtomotiv.Core.dll
+C:\Users\Nuri\source\repos\BasaranOtomotiv\BasaranOtomotiv.Core\obj\Debug\BasaranOtomotiv.Core.pdb
+C:\Users\Nuri\source\repos\BasaranOtomotiv\BasaranOtomotiv.Core\bin\Debug\FluentValidation.dll
+C:\Users\Nuri\source\repos\BasaranOtomotiv\BasaranOtomotiv.Core\bin\Debug\FluentValidation.xml

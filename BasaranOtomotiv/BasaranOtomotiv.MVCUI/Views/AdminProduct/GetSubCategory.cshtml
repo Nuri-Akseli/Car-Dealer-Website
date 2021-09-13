@@ -1,0 +1,18 @@
+﻿@model BasaranOtomotiv.Entities.Concerete.Vehicle
+@{
+    ViewBag.Title = "GetSubCategory";
+    Layout = "~/Views/Shared/_adminLayout.cshtml";
+}
+
+<h2>Alt Kategoriyi Seçiniz</h2>
+@using (Html.BeginForm("GetSubCategory", "AdminProduct", FormMethod.Post))
+{
+    <div class="form-group">
+        <br />
+        @Html.Label("Alt Kategoriler")
+        @Html.DropDownListFor(vehicle=>vehicle.SubCategoryId,(List<SelectListItem>)ViewBag.subCategories,new { @class="form-control"})
+        <button class="btn-info">Devam Et</button>
+    </div>
+
+}
+

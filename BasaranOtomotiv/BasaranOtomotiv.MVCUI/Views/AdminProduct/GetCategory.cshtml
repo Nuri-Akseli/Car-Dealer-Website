@@ -1,0 +1,16 @@
+﻿@model BasaranOtomotiv.Entities.Concerete.Vehicle
+@{
+    ViewBag.Title = "GetCategory";
+    Layout = "~/Views/Shared/_adminLayout.cshtml";
+}
+
+<h2>Kategoriyi Seçiniz</h2>
+@using (Html.BeginForm("GetCategory", "AdminProduct", FormMethod.Post))
+{
+<div class="form-group">
+    <br />
+    @Html.Label("Kategoriler")
+    @Html.DropDownListFor(vehicle => vehicle.CategoryId, (List<SelectListItem>)ViewBag.categories, new { @class = "form-control" })
+    <button class="btn-info">Devam Et</button>
+</div>
+}

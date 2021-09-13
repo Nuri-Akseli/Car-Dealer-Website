@@ -1,0 +1,22 @@
+﻿@model  BasaranOtomotiv.Entities.Concerete.Company
+@{
+    ViewBag.Title = "AddCompany";
+    Layout = "~/Views/Shared/_adminLayout.cshtml";
+}
+
+
+<center><h2>Yeni Firma Ekleme Sayfası</h2></center>
+@using (Html.BeginForm("AddCompany", "AdminCompany", FormMethod.Post))
+{
+    <div class="form-group">
+        <br />
+        @Html.Label("Firma Adı Giriniz:")
+        @Html.TextBoxFor(company=>company.CompanyName, new { @class = "form-control" })
+        @Html.ValidationMessageFor(company=>company.CompanyName)
+        <br />
+        @Html.Label("Üst Kategorisini Seçiniz:")
+        @Html.DropDownListFor(SubCategories => SubCategories.SubCategoryId, (List<SelectListItem>)ViewBag.subCategories, new { @class = "form-control" })
+        <button class="btn-info">Oluştur</button>
+    </div>
+}
+

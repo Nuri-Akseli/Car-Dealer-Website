@@ -1,0 +1,20 @@
+﻿@model BasaranOtomotiv.Entities.Concerete.SubCategory
+@{
+    ViewBag.Title = "AddSubCategory";
+    Layout = "~/Views/Shared/_adminLayout.cshtml";
+}
+
+<center><h2>Yeni Alt Kategori Ekleme Sayfası</h2></center>
+@using (Html.BeginForm("AddSubCategory", "AdminSubCategory", FormMethod.Post))
+{
+    <div class="form-group">
+        <br />
+        @Html.Label("Alt Kategori Adı Giriniz:")
+        @Html.TextBoxFor(subCategory => subCategory.SubCategoryName, new { @class = "form-control" })
+        @Html.ValidationMessageFor(subCategory => subCategory.SubCategoryName)
+        <br />
+        @Html.Label("Üst Kategorisini Seçiniz:")
+        @Html.DropDownListFor(categories=>categories.CategoryId,(List<SelectListItem>)ViewBag.categories, new { @class = "form-control" })
+        <button class="btn-info">Oluştur</button>
+    </div>
+}

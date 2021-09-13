@@ -1,0 +1,22 @@
+﻿@model BasaranOtomotiv.Entities.Concerete.SubCategory
+@{
+    ViewBag.Title = "UpdateSubCategory";
+    Layout = "~/Views/Shared/_adminLayout.cshtml";
+}
+
+<center><h2>Alt Kategori Güncelleme Sayfası</h2></center>
+
+@using (Html.BeginForm("UpdateSubCategory", "AdminSubCategory", FormMethod.Post))
+{
+    <div class="form-group">
+        @Html.HiddenFor(subCategory => subCategory.CategoryId)
+        @Html.HiddenFor(subCategory=>subCategory.SubCategoryId)
+        @Html.HiddenFor(subCategory=>subCategory.SubCategoryActivity)
+        <br />
+        @Html.Label("Alt Kategori Adını Giriniz")
+        @Html.TextBoxFor(subCategory => subCategory.SubCategoryName, new { @class = "form-control" })
+        @Html.ValidationMessageFor(subCategory => subCategory.SubCategoryName)
+        <br />
+        <button class="btn-info">Güncelle</button>
+    </div>
+}

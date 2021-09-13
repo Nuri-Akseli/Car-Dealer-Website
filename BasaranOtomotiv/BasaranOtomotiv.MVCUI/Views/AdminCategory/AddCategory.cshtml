@@ -1,0 +1,18 @@
+﻿@model BasaranOtomotiv.Entities.Concerete.Category
+@{
+    ViewBag.Title = "AddCategory";
+    Layout = "~/Views/Shared/_adminLayout.cshtml";
+}
+
+<center><h2>Yeni Kategori Ekleme Sayfası</h2></center>
+@using (Html.BeginForm("AddCategory", "AdminCategory", FormMethod.Post))
+{
+    <div class="form-group">
+        <br />
+        @Html.Label("Kategori Adı Giriniz:")
+        @Html.TextBoxFor(category => category.CategoryName, new { @class = "form-control" })
+        @Html.ValidationMessageFor(category => category.CategoryName)
+        <br />
+        <button class="btn-info">Oluştur</button>
+    </div>
+}

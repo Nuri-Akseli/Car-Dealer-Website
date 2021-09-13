@@ -1,0 +1,21 @@
+﻿@model BasaranOtomotiv.Entities.Concerete.Model
+@{
+    ViewBag.Title = "AddModel";
+    Layout = "~/Views/Shared/_adminLayout.cshtml";
+}
+
+<center><h2>Yeni Model Ekleme Sayfası</h2></center>
+@using (Html.BeginForm("AddModel", "AdminModel", FormMethod.Post))
+{
+    <div class="form-group">
+        <br />
+        @Html.Label("Model Adı Giriniz:")
+        @Html.TextBoxFor(model=>model.ModelName, new { @class = "form-control" })
+        @Html.ValidationMessageFor(model => model.ModelName)
+        <br />
+        @Html.Label("Üst Kategorisini Seçiniz:")
+        @Html.DropDownListFor(company => company.CompanyId, (List<SelectListItem>)ViewBag.models, new { @class = "form-control" })
+        <button class="btn-info">Oluştur</button>
+    </div>
+}
+

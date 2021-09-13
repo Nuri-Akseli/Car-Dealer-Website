@@ -1,0 +1,160 @@
+﻿@using BasaranOtomotiv.Entities.Concerete
+@model List<Vehicle>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_userLayout.cshtml";
+}
+
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+
+    <script>
+
+        $(function () {
+
+            $("#slider").responsiveSlides({
+                auto: true,
+                pager: false,
+                nav: true,
+                speed: 500,
+                namespace: "callbacks",
+                before: function () {
+                    $('.events').append("<li>before event fired.</li>");
+                },
+                after: function () {
+                    $('.events').append("<li>after event fired.</li>");
+                }
+            });
+        });
+    </script>
+
+</head>
+<body>
+    <div class="wrap-body">
+
+        <div class="slider">
+
+            <div class="callbacks_container">
+                <ul class="rslides" id="slider">
+
+                    @foreach (var item in Model)
+                    {
+                        <li>
+                            <img src="@item.VehiclePictures.First().VehiclePicturePath" alt="">
+                            <div class="caption">
+                                <h1>Vitrindeki Arabalar</h1>
+                            </div>
+                        </li>
+                    }
+
+
+                </ul>
+            </div>
+            <div class="clear"></div>
+        </div>
+        <section id="container">
+            <div class="wrap-container clearfix">
+                <div id="main-content">
+                    <div class="wrap-box">
+                        <div class="basaran">
+                            <div class="header">
+                                <br />
+                                <h2></h2>
+                            </div>
+                            <div class="row">
+                                <div class="col-1-3">
+                                    <div class="wrap-col">
+
+                                        @for (int i = 0; i < 2; i++)
+                                        {
+                                            <div class="item t-center">
+                                                <div class="item-container">
+                                                    <a href="/UserView/VehicleDetail/@Model[i].VehicleId">
+                                                        <div class="item-caption">
+                                                            <div class="item-caption-inner">
+                                                                <div class="item-caption-inner1">
+                                                                    <span>@Model[i].VehicleHeading</span>
+                                                                    <br />
+                                                                    <span>@Model[i].VehicleDistance @Model[i].VehicleDistanceUnit</span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <img style="width:500px; height:250px;" src="@Model[i].VehiclePictures.First().VehiclePicturePath" />
+                                                    </a>
+                                                </div>
+                                                <div class="item-info">
+                                                    <a href="/UserView/VehicleDetail/@Model[i].VehicleId"><h3>@Model[i].Company.CompanyName @Model[i].Model.ModelName</h3></a>
+                                                    <p>@Model[i].VehicleValue @Model[i].VehicleValueUnit</p>
+                                                </div>
+                                            </div>
+                                        }
+                                    </div>
+                                </div>
+                                <div class="col-1-3">
+                                    <div class="wrap-col">
+                                        @for (int i = 2; i < 4; i++)
+                                        {
+                                            <div class="item t-center">
+                                                <div class="item-container">
+                                                    <a href="/UserView/VehicleDetail/@Model[i].VehicleId">
+                                                        <div class="item-caption">
+                                                            <div class="item-caption-inner">
+                                                                <div class="item-caption-inner1">
+                                                                    <span>@Model[i].VehicleHeading</span>
+                                                                    <br />
+                                                                    <span>@Model[i].VehicleDistance @Model[i].VehicleDistanceUnit</span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <img style="width:500px; height:250px;" src="@Model[i].VehiclePictures.First().VehiclePicturePath" />
+                                                    </a>
+                                                </div>
+                                                <div class="item-info">
+                                                    <a href="/UserView/VehicleDetail/@Model[i].VehicleId"><h3>@Model[i].Company.CompanyName @Model[i].Model.ModelName</h3></a>
+                                                    <p>@Model[i].VehicleValue @Model[i].VehicleValueUnit</p>
+                                                </div>
+                                            </div>
+
+                                        }
+                                    </div>
+                                </div>
+                                <div class="col-1-3">
+                                    <div class="wrap-col">
+                                        @for (int i = 4; i < 6; i++)
+                                        {
+                                            <div class="item t-center">
+                                                <div class="item-container">
+                                                    <a href="/UserView/VehicleDetail/@Model[i].VehicleId">
+                                                        <div class="item-caption">
+                                                            <div class="item-caption-inner">
+                                                                <div class="item-caption-inner1">
+                                                                    <span>@Model[i].VehicleHeading</span>
+                                                                    <br />
+                                                                    <span>@Model[i].VehicleDistance @Model[i].VehicleDistanceUnit</span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <img style="width:500px; height:250px;" src="@Model[i].VehiclePictures.First().VehiclePicturePath" />
+                                                    </a>
+                                                </div>
+                                                <div class="item-info">
+                                                    <a href="/UserView/VehicleDetail/@Model[i].VehicleId"><h3>@Model[i].Company.CompanyName @Model[i].Model.ModelName</h3></a>
+                                                    <p>@Model[i].VehicleValue @Model[i].VehicleValueUnit</p>
+                                                </div>
+                                            </div>
+
+                                        }
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </div>
+</body>
+</html>

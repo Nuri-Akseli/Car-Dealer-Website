@@ -1,0 +1,23 @@
+﻿@model BasaranOtomotiv.Entities.Concerete.Category
+@{
+    ViewBag.Title = "UpdateCategory";
+    Layout = "~/Views/Shared/_adminLayout.cshtml";
+}
+
+<center><h2>Kategori Güncelleme Sayfası</h2></center>
+
+@using (Html.BeginForm("UpdateCategory", "AdminCategory", FormMethod.Post))
+{
+    <div class="form-group">
+        @Html.HiddenFor(category => category.CategoryId)
+        @Html.HiddenFor(category => category.CategoryActivity)
+
+        <br />
+        @Html.Label("Kategori Adını Giriniz")
+        @Html.TextBoxFor(category => category.CategoryName, new { @class = "form-control" })
+        @Html.ValidationMessageFor(category => category.CategoryName)
+        <br />
+        <button class="btn-info">Güncelle</button>
+    </div>
+}
+

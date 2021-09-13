@@ -1,0 +1,23 @@
+﻿@model BasaranOtomotiv.Entities.Concerete.Company
+@{
+    ViewBag.Title = "UpdateCompany";
+    Layout = "~/Views/Shared/_adminLayout.cshtml";
+}
+
+<center><h2>Firma Güncelleme Sayfası</h2></center>
+
+@using (Html.BeginForm("UpdateCompany", "AdminCompany", FormMethod.Post))
+{
+    <div class="form-group">
+        @Html.HiddenFor(company=>company.CompanyId)
+        @Html.HiddenFor(company=>company.SubCategoryId)
+        @Html.HiddenFor(company=>company.CompanyActivity)
+        <br />
+        @Html.Label("Firma Adını Değiştirin")
+        @Html.TextBoxFor(company=>company.CompanyName, new { @class = "form-control" })
+        @Html.ValidationMessageFor(company=>company.CompanyName)
+        <br />
+        <button class="btn-info">Güncelle</button>
+    </div>
+}
+

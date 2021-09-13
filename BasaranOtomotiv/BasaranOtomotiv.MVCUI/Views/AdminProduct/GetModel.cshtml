@@ -1,0 +1,16 @@
+﻿@model BasaranOtomotiv.Entities.Concerete.Vehicle
+@{
+    ViewBag.Title = "GetModel";
+    Layout = "~/Views/Shared/_adminLayout.cshtml";
+}
+<h2>Model Seçiniz</h2>
+@using (Html.BeginForm("GetModel", "AdminProduct", FormMethod.Post))
+{
+    <div class="form-group">
+        <br />
+        @Html.Label("Modeller")
+        @Html.DropDownListFor(vehicle => vehicle.ModelId, (List<SelectListItem>)ViewBag.models, new { @class = "form-control" })
+        <button class="btn-info">Devam Et</button>
+    </div>
+
+}

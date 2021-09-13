@@ -1,0 +1,23 @@
+﻿@model BasaranOtomotiv.Entities.Concerete.Engine
+@{
+    ViewBag.Title = "UpdateEngine";
+    Layout = "~/Views/Shared/_adminLayout.cshtml";
+}
+
+<center><h2>Motor Güncelleme Sayfası</h2></center>
+
+@using (Html.BeginForm("UpdateEngine", "AdminEngine", FormMethod.Post))
+{
+    <div class="form-group">
+        @Html.HiddenFor(engine=>engine.EngineId)
+        @Html.HiddenFor(engine => engine.ModelId)
+        @Html.HiddenFor(engine => engine.EngineActivity)
+        <br />
+        @Html.Label("Motor Adını Güncelleyiniz")
+        @Html.TextBoxFor(engine => engine.EngineName, new { @class = "form-control" })
+        @Html.ValidationMessageFor(engine => engine.EngineName)
+        <br />
+        <button class="btn-info">Güncelle</button>
+    </div>
+}
+

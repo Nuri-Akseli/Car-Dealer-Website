@@ -1,0 +1,18 @@
+﻿@model BasaranOtomotiv.Entities.Concerete.Vehicle
+@{
+    ViewBag.Title = "GetEngine";
+    Layout = "~/Views/Shared/_adminLayout.cshtml";
+}
+<p>@ViewBag.test</p>
+<h2>Motor Seçiniz</h2>
+@using (Html.BeginForm("GetEngine", "AdminProduct", FormMethod.Post))
+{
+    <div class="form-group">
+        <br />
+        @Html.Label("Motorlar")
+        @Html.DropDownListFor(vehicle => vehicle.EngineId, (List<SelectListItem>)ViewBag.engines, new { @class = "form-control" })
+        <button class="btn-info">Devam Et</button>
+    </div>
+
+}
+

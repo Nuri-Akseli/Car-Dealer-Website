@@ -1,0 +1,47 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="utf-8">
+    <title>B Otomotiv</title>
+    <meta name="description" content="Otomotiv,araba,satılık,satılık araç">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <link rel="stylesheet" href="~/Templates/BasaranCar/css/basaran.css">
+    <link rel="stylesheet" href="~/Templates/BasaranCar/css/style.css">
+    <link rel="stylesheet" href="~/Templates/BasaranCar/css/responsiveslides.css">
+    <link rel="icon" href="~/Templates/images/logo.ico" type="image/x-icon">
+
+    <script src="~/Templates/BasaranCar/js/jquery-latest.min.js"></script>
+    <script src="~/Templates/BasaranCar/js/script.js"></script>
+    <script src="~/Templates/BasaranCar/js/jquery183.min.js"></script>
+    <script src="~/Templates/BasaranCar/js/responsiveslides.min.js"></script>
+
+</head>
+<body>
+    <div class="wrap-body">
+
+        <header class="bg-theme">
+            <div class="wrap-header basaran">
+                <div class="row">
+                    <div id="cssmenu">
+                        <ul>
+                            <li class='active'><a href="/UserView/Index">Anasayfa</a></li>
+                            <li><a href="/UserView/Vehicles">Arabalar</a></li>
+                            <li><a href="/UserView/About">Hakkımızda</a></li>
+                            <li><a href="/UserView/Contact">İletişim</a></li>
+                        </ul>
+                    </div>
+                    <a href='/UserView/Index' class="logo"><img src="~/Templates/images/logo.png" /></a>
+                </div>
+            </div>
+        </header>
+
+        @RenderBody()
+    </div>
+</body>
+</html>

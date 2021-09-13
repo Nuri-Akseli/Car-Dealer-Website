@@ -1,0 +1,36 @@
+﻿@model BasaranOtomotiv.Entities.Concerete.User
+
+@{
+    ViewBag.Title = "EditProfile";
+    Layout = "~/Views/Shared/_adminLayout.cshtml";
+}
+
+<center><h2>Hesap düzenleme</h2></center>
+@using (Html.BeginForm("EditProfile", "AdminAccount", FormMethod.Post)) { 
+<div class="form-group">
+    @Html.HiddenFor(user => user.UserId)
+    @Html.HiddenFor(user => user.UserMail)
+    @Html.HiddenFor(user => user.UserRole)
+    @Html.HiddenFor(user => user.UserActivity)
+    @Html.HiddenFor(user => user.UserPhoto)
+
+    <br />
+    @Html.Label("İsminiz")
+    @Html.TextAreaFor(user => user.UserName, new { @class = "form-control" })
+    @Html.ValidationMessageFor(user => user.UserName)
+    <br />
+
+    @Html.Label("Soyadınız")
+    @Html.TextAreaFor(user => user.UserSurname, new { @class = "form-control" })
+    @Html.ValidationMessageFor(user => user.UserSurname)
+    <br />
+
+    @Html.Label("Parolanız")
+    @Html.TextBoxFor(user=>user.UserPassword,new { @class="form-control"})
+    @Html.ValidationMessageFor(user => user.UserPassword)
+    <br />
+    @Html.ValidationMessageFor(user=>user.UserMail)
+    <button class="btn-info">Güncelle</button>
+</div>
+}
+

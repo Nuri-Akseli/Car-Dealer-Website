@@ -1,0 +1,53 @@
+﻿@model BasaranOtomotiv.Entities.Concerete.User
+@{
+    ViewBag.Title = "AddUser";
+    Layout = "~/Views/Shared/_adminLayout.cshtml";
+}
+
+<center><h2>Yeni Kullanıcı Ekleme</h2></center>
+<h4>Bilgilendirme: Yeni Açılan hesabın şifresi otomatik olarak BASARANOTOMOTİV olarak belirlenir</h4>
+@using (Html.BeginForm("AddUser", "AdminAccount", FormMethod.Post,new { enctype="multipart/form-data"}))
+{
+    <div class="form-group">
+        @Html.HiddenFor(user => user.UserId)
+        @Html.HiddenFor(user => user.UserPassword)
+        @Html.HiddenFor(user => user.UserActivity)
+        @Html.HiddenFor(user => user.UserPhoto)
+
+        <br />
+        @Html.Label("Resim Ekleyiniz")
+        <input type="file" name="UserPhoto" />
+        <br />
+        @Html.Label("İsminiz")
+        @Html.TextBoxFor(user => user.UserName, new { @class = "form-control" })
+        @Html.ValidationMessageFor(user => user.UserName)
+        <br />
+
+        @Html.Label("Soyadınız")
+        @Html.TextBoxFor(user => user.UserSurname, new { @class = "form-control" })
+        @Html.ValidationMessageFor(user => user.UserSurname)
+        <br />
+        @Html.Label("Mailiniz")
+        @Html.TextBoxFor(user => user.UserMail, new { @class = "form-control" })
+        @Html.ValidationMessageFor(user => user.UserMail)
+        <br />
+        <br />
+        @Html.Label("Kullanıcının Rolü:")
+        @Html.DropDownListFor(user => user.UserRole, new List<SelectListItem> {
+                         new SelectListItem {
+                            Text="Admin",
+                            Value="Admin",
+
+
+                         },
+                         new SelectListItem {
+                            Text="Editor",
+                            Value="Editor",
+
+                         },
+
+                     }, new { @class = "form-control" })
+        <br />
+        <button class="btn-info">Oluştur</button>
+    </div>
+}

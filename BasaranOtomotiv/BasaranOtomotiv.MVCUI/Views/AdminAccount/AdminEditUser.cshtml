@@ -1,0 +1,50 @@
+﻿@model BasaranOtomotiv.Entities.Concerete.User
+@{
+    ViewBag.Title = "AdminEditUser";
+    Layout = "~/Views/Shared/_adminLayout.cshtml";
+}
+
+<center><h2>Hesap düzenleme</h2></center>
+@using (Html.BeginForm("AdminEditUser", "AdminAccount", FormMethod.Post))
+{
+<div class="form-group">
+    @Html.HiddenFor(user => user.UserId)
+    @Html.HiddenFor(user => user.UserPassword)
+    @Html.HiddenFor(user => user.UserActivity)
+    @Html.HiddenFor(user => user.UserPhoto)
+    <br />
+    @Html.Label("İsim:")
+    @Html.DisplayFor(user => user.UserName)
+    @Html.HiddenFor(user => user.UserName)
+    <br />
+    @Html.Label("Soyisim:")
+    @Html.DisplayFor(user => user.UserSurname)
+    @Html.HiddenFor(user => user.UserSurname)
+    <br />
+    @Html.Label("Mail:")
+    @Html.DisplayFor(user => user.UserMail)
+    @Html.HiddenFor(user => user.UserMail)
+    <br />
+    @Html.Label("Mevcut Rol:")
+    @Html.DisplayFor(user => user.UserRole)
+    <br />
+    @Html.Label("Gelecekteki Rolü:")
+    @Html.DropDownListFor(user => user.UserRole, new List<SelectListItem> {
+                     new SelectListItem {
+                        Text="Admin",
+                        Value="Admin",
+
+
+                     },
+                     new SelectListItem {
+                        Text="Editor",
+                        Value="Editor",
+
+                     },
+
+                 }, new { @class = "form-control" })
+    <br />
+    <button class="btn-info">Güncelle</button>
+</div>
+}
+

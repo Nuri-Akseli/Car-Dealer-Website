@@ -1,0 +1,23 @@
+﻿@model BasaranOtomotiv.Entities.Concerete.Model
+@{
+    ViewBag.Title = "UpdateModel";
+    Layout = "~/Views/Shared/_adminLayout.cshtml";
+}
+
+<center><h2>Model Güncelleme Sayfası</h2></center>
+
+@using (Html.BeginForm("UpdateModel", "AdminModel", FormMethod.Post))
+{
+    <div class="form-group">
+        @Html.HiddenFor(model=>model.ModelId)
+        @Html.HiddenFor(model=>model.CompanyId)
+        @Html.HiddenFor(model=>model.ModelActivity)
+        <br />
+        @Html.Label("Model Adını Güncelleyiniz")
+        @Html.TextBoxFor(model=>model.ModelName, new { @class = "form-control" })
+        @Html.ValidationMessageFor(model=>model.ModelName)
+        <br />
+        <button class="btn-info">Güncelle</button>
+    </div>
+}
+

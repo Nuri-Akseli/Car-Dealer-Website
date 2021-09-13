@@ -1,0 +1,66 @@
+
+.basaran{ width: 1200px; position: relative; margin: 0 auto; padding: 0px;}
+.basaran:after { content: "\0020"; display: block; height: 0; clear: both; visibility: hidden; }
+
+.basaran .f-right{float: right!important;}
+.basaran .f-left{float: left!important;}
+
+.basaran .row{}
+.basaran .row:before,.row:after { content: '\0020'; display: block; overflow: hidden; visibility: hidden; width: 0; height: 0; }
+.basaran .row:after{clear: both; }
+.basaran .row{zoom: 1;}
+
+.basaran .wrap-col{margin:10px;}
+
+.basaran .col-1-2, .basaran .col-1-3, .basaran .col-2-3, .basaran .col-1-4, .basaran .col-2-4, .basaran .col-3-4, .basaran .col-1-5, .basaran .col-2-5, .basaran .col-3-5, .basaran .col-4-5, .basaran .col-1-6, .basaran .col-2-6, .basaran .col-3-6, .basaran .col-4-6, .basaran .col-5-6{float:left; display: inline-block;}
+
+.basaran .col-full{width:100%;}
+
+.basaran .col-1-2,.basaran .col-1-2-fixed{width:50%;}
+.basaran .offset-1-2{margin-left: 50%;}
+
+.basaran .col-1-3,.basaran .col-1-3-fixed{width:33.33%;}
+.basaran .col-2-3,.basaran .col-2-3-fixed{width:66.66%;}
+.basaran .offset-1-3{margin-left: 33.33%;}
+.basaran .offset-2-3{margin-left: 66.66%;}
+
+.basaran .col-1-4,.basaran .col-1-4-fixed{width:25%;}
+.basaran .col-2-4,.basaran .col-2-4-fixed{width:50%;}
+.basaran .col-3-4,.basaran .col-3-4-fixed{width:75%;}
+.basaran .offset-1-4{margin-left: 25%;}
+.basaran .offset-2-4{margin-left: 50%;}
+.basaran .offset-3-4{margin-left: 75%;}
+
+.basaran .col-1-5,.basaran .col-1-5-fixed{width:20%;}
+.basaran .col-2-5,.basaran .col-2-5-fixed{width:40%;}
+.basaran .col-3-5,.basaran .col-3-5-fixed{width:60%;}
+.basaran .col-4-5,.basaran .col-4-5-fixed{width:80%;}
+.basaran .offset-1-5{margin-left: 20%;}
+.basaran .offset-2-5{margin-left: 40%;}
+.basaran .offset-3-5{margin-left: 60%;}
+.basaran .offset-4-5{margin-left: 80%;}
+
+.basaran .col-1-6,.basaran .col-1-6-fixed{width:16.66%;}
+.basaran .col-2-6,.basaran .col-2-6-fixed{width:33.33%;}
+.basaran .col-3-6,.basaran .col-3-6-fixed{width:50%;}
+.basaran .col-4-6,.basaran .col-4-6-fixed{width:66.66%;}
+.basaran .col-5-6,.basaran .col-5-6-fixed{width:83.33%;}
+.basaran .offset-1-6{margin-left: 16.66%;}
+.basaran .offset-2-6{margin-left: 33.33%;}
+.basaran .offset-3-6{margin-left: 50%;}
+.basaran .offset-4-6{margin-left: 66.66%;}
+.basaran .offset-5-6{margin-left: 83.33%;}
+
+@media only screen and (min-width: 960px) and (max-width: 1199px) {
+	.basaran{width:960px;}
+}
+
+@media only screen and (min-width: 768px) and (max-width: 959px) {
+	.basaran{width:768px;}
+}
+
+@media only screen and (max-width: 767px) {
+	.basaran, .basaran .col-1-2, .basaran .col-1-3, .basaran .col-2-3, .basaran .col-1-4, .basaran .col-2-4, .basaran .col-3-4, .basaran .col-1-5, .basaran .col-2-5, .basaran .col-3-5, .basaran .col-4-5, .basaran .col-1-6, .basaran .col-2-6, .basaran .col-3-6, .basaran .col-4-6, .basaran .col-5-6{width:100%;}
+	
+	.basaran .offset-1-2, .basaran .offset-1-3, .basaran .offset-2-3, .basaran .offset-1-4, .basaran .offset-2-4, .basaran .offset-3-4, .basaran .offset-1-5, .basaran .offset-2-5, .basaran .offset-3-5, .basaran .offset-4-5, .basaran .offset-1-6, .basaran .offset-2-6, .basaran .offset-3-6, .basaran .offset-4-6, .basaran .offset-5-6{margin-left:0;}
+}

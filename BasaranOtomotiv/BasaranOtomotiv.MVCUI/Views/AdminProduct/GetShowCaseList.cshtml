@@ -1,0 +1,79 @@
+﻿@using BasaranOtomotiv.Entities.Concerete
+@model List<Vehicle>
+@{
+    ViewBag.Title = "GetShowCaseList";
+    Layout = "~/Views/Shared/_adminLayout.cshtml";
+}
+
+<!DOCTYPE html>
+<html>
+<body class="hold-transition sidebar-mini">
+    <section class="content-header">
+        <div class="container-fluid">
+            <div class="row mb-2">
+                <div class="col-sm-6">
+                    <center><h1>Vitrindeki Araçlar</h1></center>
+                </div>
+            </div>
+        </div><!-- /.container-fluid -->
+    </section>
+    <!-- Main content -->
+    <section class="content">
+        <!-- Default box -->
+        <div class="card card-solid">
+            <div class="card-body pb-0">
+                <div class="row d-flex align-items-stretch">
+                    @foreach (var item in Model)
+                    {
+
+                        <div class="col-12 col-sm-6 col-md-4 d-flex align-items-stretch">
+                            <div class="card bg-light">
+                                <div class="card-header text-muted border-bottom-0">
+                                    @item.VehicleHeading
+                                </div>
+                                <div class="card-body pt-0">
+                                    <div class="row">
+                                        <div class="col-7">
+                                            <h2 class="lead"><b>@item.VehiclePlate</b></h2>
+                                            <p class="text-muted text-sm">
+                                                <b>Durum: </b> @if (item.VehicleActivity)
+                                                {
+                                                    <i>Aktif</i>
+                                                }
+                                                else
+                                                {
+                                                    <i>Pasif</i>
+
+                                                }
+                                            </p>
+                                            <p class="text-muted text-sm"> </p>
+                                            <ul class="ml-4 mb-0 fa-ul text-muted">
+                                                <li class="small"><span class="fa-li"><i class="fas fa-lg fa-mail-bulk"></i></span>Firma:@item.Company.CompanyName</li>
+                                                <li class="small"><span class="fa-li"><i class="fas fa-lg fa-mail-bulk"></i></span>Firma:@item.Model.ModelName</li>
+                                            </ul>
+                                        </div>
+                                        <div class="col-5 text-center">
+                                            <img src=@item.VehiclePictures.FirstOrDefault().VehiclePicturePath alt="" class="img-circle img-fluid">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card-footer">
+                                    <div class="text-right">
+                                        <a href="/AdminProduct/ChangeProductActivity/@item.VehicleId" class="btn btn-sm btn-danger">
+                                            <i class="fas fa-user"></i> Sil
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    }
+
+                </div>
+            </div>
+        </div>
+        <!-- /.card -->
+    </section>
+    <!-- /.content -->
+</body>
+</html>
+

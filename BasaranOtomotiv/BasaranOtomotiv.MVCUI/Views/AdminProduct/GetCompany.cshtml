@@ -1,0 +1,17 @@
+﻿@model BasaranOtomotiv.Entities.Concerete.Vehicle
+@{
+    ViewBag.Title = "GetCompany";
+    Layout = "~/Views/Shared/_adminLayout.cshtml";
+}
+<h2>Firma Seçiniz</h2>
+@using (Html.BeginForm("GetCompany", "AdminProduct", FormMethod.Post))
+{
+    <div class="form-group">
+        <br />
+        @Html.Label("Firmalar")
+        @Html.DropDownListFor(vehicle => vehicle.CompanyId, (List<SelectListItem>)ViewBag.companies, new { @class = "form-control" })
+        <button class="btn-info">Devam Et</button>
+    </div>
+
+}
+

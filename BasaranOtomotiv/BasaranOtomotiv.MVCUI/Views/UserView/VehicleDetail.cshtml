@@ -1,0 +1,105 @@
+﻿@model BasaranOtomotiv.Entities.Concerete.Vehicle
+@{
+    ViewBag.Title = "VehicleDetail";
+    Layout = "~/Views/Shared/_userLayout.cshtml";
+}
+
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <script>
+        $(function () {
+
+            $("#slider").responsiveSlides({
+                auto: true,
+                pager: false,
+                nav: true,
+                speed: 500,
+                namespace: "callbacks",
+                before: function () {
+                    $('.events').append("<li>before event fired.</li>");
+                },
+                after: function () {
+                    $('.events').append("<li>after event fired.</li>");
+                }
+            });
+        });
+    </script>
+
+</head>
+<body>
+    <div class="wrap-body">
+        <section id="container">
+            <div class="">
+                <div class="wrap-container clearfix">
+                    <div id="main-content">
+                        <div class="wrap-box" style="background: #fff; box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.3);">
+                            <div class="basaran">
+                                <div class="header">
+                                    <h1>@Model.Company.CompanyName @Model.Model.ModelName</h1>
+                                </div>
+                                <div class="row">
+                                    <div class="col-2-3">
+                                        <div class="wrap-col">
+                                            <div class="slider">
+
+                                                <div class="callbacks_container">
+                                                    <ul class="rslides" id="slider">
+                                                        @foreach (var item in Model.VehiclePictures)
+                                                        {
+
+                                                            <li>
+                                                                <img style="width:500px; height:250px; margin-left:150px;" src="@item.VehiclePicturePath" alt="">
+                                                            </li>
+
+
+
+                                                        }
+                                                    </ul>
+
+                                                </div>
+                                                <div class="clear"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-1-3">
+                                        <div class="wrap-col">
+                                            <p class="price">@Model.VehicleValue @Model.VehicleValueUnit </p>
+                                            <ul class="specs">
+                                                <li><strong>Yüklenme Tarihi</strong> <span>@Model.VehicleTime</span></li>
+                                                <li><strong>Kategorisi</strong> <span>@Model.Category.CategoryName</span></li>
+                                                <li><strong>Alt Kategorisi</strong> <span>@Model.SubCategory.SubCategoryName</span></li>
+                                                <li><strong>Firma</strong> <span>@Model.Company.CompanyName</span></li>
+                                                <li><strong>Model</strong> <span>@Model.Model.ModelName</span></li>
+                                                <li><strong>Motoru</strong> <span>@Model.Engine.EngineName</span></li>
+                                                <li><strong>Yol</strong> <span>@Model.VehicleDistance @Model.VehicleDistanceUnit</span></li>          
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="wrap-box">
+                            <div class="basaran">
+                                <div class="row">
+                                    <div class="col-2-3">
+                                        <div class="wrap-col">
+                                            <div class="info">
+                                                <h2 class="h3">Detaylar</h2>
+
+                                                <p>@Model.VehicleDetail</p>
+                                            </div>                                          
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </div>
+</body>
+</html>
+

@@ -1,0 +1,93 @@
+﻿@model BasaranOtomotiv.Entities.ComplexTypes.FullVehicle
+@{
+    ViewBag.Title = "AddProduct";
+    Layout = "~/Views/Shared/_adminLayout.cshtml";
+}
+
+<center><h2>Araç Ekleme Sayfası</h2></center>
+@using (Html.BeginForm("AddProduct", "AdminProduct", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+<div class="form-group">
+    @Html.HiddenFor(vehicle => vehicle.Vehicle.VehicleId)
+    @Html.HiddenFor(vehicle => vehicle.Vehicle.VehicleActivity)
+    @Html.HiddenFor(vehiclePicture => vehiclePicture.VehiclePicture.VehicleId)
+    @Html.HiddenFor(vehiclePicture => vehiclePicture.VehiclePicture.VehiclePictureId)
+    <br />
+    @Html.Label("Araç Başlığını giriniz:")
+    <br />
+    @Html.TextBoxFor(vehicle => vehicle.Vehicle.VehicleHeading)
+    @Html.ValidationMessageFor(vehicle => vehicle.Vehicle.VehicleHeading)
+    <br />
+    @Html.Label("Araç Detaylarını giriniz:")
+    <br />
+    @Html.TextAreaFor(vehicle => vehicle.Vehicle.VehicleDetail)
+    <br />
+    @Html.ValidationMessageFor(vehicle => vehicle.Vehicle.VehicleDetail)
+    <br />
+    @Html.Label("Aracın Km'si: (sadece sayı giriniz)")
+    <br />
+    @Html.TextBoxFor(vehicle => vehicle.Vehicle.VehicleDistance)
+    @Html.ValidationMessageFor(vehicle => vehicle.Vehicle.VehicleDistance)
+    <br />
+    @Html.Label("Birimi")
+    @Html.DropDownListFor(vehicle => vehicle.Vehicle.VehicleDistanceUnit, new List<SelectListItem>
+    {
+        new SelectListItem
+        {
+            Text = "KM",
+            Value = "KM"
+        },
+        new SelectListItem
+        {
+            Text = "Mil",
+            Value = "Mil"
+        }
+    }, new { @class = "form-control" })
+    <br />
+    @Html.Label("Aracın Fiyatı: (sadece sayı giriniz)")
+    <br />
+    @Html.TextBoxFor(vehicle => vehicle.Vehicle.VehicleValue)
+    @Html.ValidationMessageFor(vehicle => vehicle.Vehicle.VehicleValue)
+    <br />
+    @Html.Label("Para Birimi:")
+    @Html.DropDownListFor(vehicle => vehicle.Vehicle.VehicleValueUnit, new List<SelectListItem>
+    {
+        new SelectListItem
+        {
+            Text = "TL",
+            Value = "TL"
+        },
+        new SelectListItem
+        {
+            Text = "$",
+            Value = "$"
+        },
+         new SelectListItem
+        {
+            Text = "€",
+            Value = "€"
+        }
+    }, new { @class = "form-control" })
+    <br />
+    <fieldset>
+        @Html.Label("Araç Vitrin Aracı mı?")
+        @Html.RadioButtonFor(vehicle => vehicle.Vehicle.VehicleIsShowCase, false, new { id = "showcase-false", @checked = true })
+        @Html.Label("Hayır")
+        @Html.RadioButtonFor(vehicle => vehicle.Vehicle.VehicleIsShowCase, true, new { id = "showcase-true" })
+        @Html.Label("Evet")
+        @Html.ValidationMessageFor(vehicle => vehicle.Vehicle.VehicleIsShowCase)
+    </fieldset>
+    <br />
+    @Html.Label("Aracın Plakasını Giriniz (Kullanıcıya gösterilmeyecek)")
+    @Html.TextBoxFor(vehicle => vehicle.Vehicle.VehiclePlate)
+    @Html.ValidationMessageFor(vehicle => vehicle.Vehicle.VehiclePlate)
+    <br />
+    @Html.Label("1.Resim Ekleyiniz")
+    <input type="file" name="files" multiple />
+   
+    <br />
+    <button class="btn-info">Oluştur</button>
+</div>
+
+}
+
